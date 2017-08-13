@@ -1,5 +1,5 @@
 <?php
-  require_once("PdoUtil.php")
+  require_once("PdoUtil.php");
 ?>
 <html>
   <body>
