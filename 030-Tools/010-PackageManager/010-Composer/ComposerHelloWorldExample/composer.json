@@ -1,4 +1,16 @@
 {
-    "name": "ben_c/composer-hello-world-example",
-    "require": {}
+    "name": "user/composer-hello-world-example",
+    "authors": [
+        {
+            "name": "imben1109",
+            "email": "imben1109@gmail.com"
+        }
+    ],
+    "require": {},
+	"autoload": {
+        "psr-0": {
+            "HelloWorld": "src/"
+        }
+    }
+
 }

@@ -1,22 +1,50 @@
-# Composer Example
 
-## Composer
-Composer is a dependency manager for PHP. The default repository is Packagist.
-
-The composer is package as .phar file (PHP Archive) and can be executed by PHP.
-
-To check if the composer is available
-```
-composer -V
-```
-
-To set up Composer Project, it require a composer.json file and include dependencies specified within require.
-Or, you could use the following command to create a composer.json file.
+## Create composer.json
 ```
 composer init
 ```
 
 
+## Add Autoload
 ```
-composer install
+"autoload": {
+	"psr-0": {
+		"HelloWorld": "src/"
+	}
+}
 ```
+
+
+## Create src/HelloWorld/Greeting.php
+```
+<?php
+
+namespace HelloWorld;
+
+class Greeting {
+	
+	public static function sayHelloWorld(){
+		return "Hello World";
+	}
+}
+
+?>
+```
+
+## Create src/Program.php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use HelloWorld\Greeting;
+
+echo Greeting::sayHelloWorld();
+
+?>
+##
+
+## Execute the Program.php
+```
+php src/Program.php
+```
+
